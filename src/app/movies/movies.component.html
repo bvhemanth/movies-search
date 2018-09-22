@@ -1,0 +1,109 @@
+
+<div class="row toppanel">
+	<div class="col-sm-4">
+	</div>
+	<div class="col-sm-4">
+		<input type="search" class="form-control" [(ngModel)]="Search" Placeholder="Search by key word"/>
+	</div>
+	<div class="col-sm-4">
+		<span class="searchbutton" (click)="search()">Search</span>
+	</div>
+</div>	
+
+<div class="row">
+	<div class="col-sm-3 leftpanel ">
+		<div class="row eachcard" *ngFor="let data of SearchResults" (click)="getMovieDetails(data.id)">
+			<div class="col-sm-2">
+				<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{data.poster_path}}" height="30" width="30"/>
+			</div>
+			<div class="col-sm-10">
+				<div>{{data.original_title}}</div>
+				<div>Rating :	{{data.vote_average}}</div>
+				<div>Released on :{{data.release_date}}</div>
+			</div>
+			
+			
+			<div class="row" title={{data.overview}}>
+				<p>{{data.overview}}</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="col-sm-9 resultspanel">
+		<div class="row" *ngFor="let data of MoviewDetails">
+			<div class="col-sm-4">
+				<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{data.poster_path}}">
+			</div>
+			<div class="col-sm-8">
+				<p>{{data.original_title}}<sub><small>{{data.tagline}}</small></sub></p>
+				<table class="table">
+					<tr>
+						<td>
+						Genres
+						</td>
+						<td>	
+							<span *ngFor="let genres of data.genres">
+								{{genres.name}}  &nbsp;&nbsp;
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td> Released Date</td>
+						<td>{{data.release_date}}</td>
+					</tr>
+					<tr>
+						<td>Runtime</td>
+						<td>{{data.runtime}} Mins</td>
+					</tr>
+					<tr>
+						<td>Budget</td>
+						<td>
+							<div *ngIf="data.budget!=0">{{data.budget}}</div>
+							<div *ngIf="data.budget==0">Oops Don't know</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Revenue</td>
+						<td>
+							<div *ngIf="data.revenue!=0">{{data.revenue}}</div>
+							<div *ngIf="data.revenue==0">Oops Don't know</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Overview</td>
+						<td>{{data.overview}}</td>
+					</tr>
+					<tr>
+						<td>Status</td>
+						<td>{{data.status}}</td>
+					</tr>
+					<tr>
+						<td>
+							Production Contries
+						</td>
+						<td>
+							<div *ngFor="let production_countries of data.production_countries">
+								{{production_countries.name}} 
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Production Companies
+						</td>
+						<td>
+							<div *ngFor="let production_companies of data.production_companies">
+								{{production_companies.name}} 
+							</div>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

@@ -1,0 +1,45 @@
+
+.eachcard
+{
+	box-shadow: 1px 2px 5px 1px #ddd;
+    margin-top: 10px;
+    max-height: 77px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 9px;
+    border: 1px solid #ddd;
+    padding: 3px;
+    border-radius: 3px;
+    cursor:pointer;
+  	/*height: 300px; 
+  	white-space: nowrap;*/
+}
+.searchbutton
+{
+	cursor: pointer;
+}
+.leftpanel
+{
+	height: 100vh;
+	overflow-y:auto;
+	overflow-x: hidden; 
+}
+
+.toppanel
+{
+	background-color: #d8d8d8;
+	height: 50px;
+	line-height: 25px;
+	padding:10px 5px;
+}
+.resultspanel
+{
+	background-color: #d8d8d8;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border:10px solid #fff;
+	padding: 10px;
+}
+
+
