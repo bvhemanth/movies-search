@@ -15,8 +15,6 @@ import { ApisService } from '../services/apis.service';
 })
 export class MoviesComponent implements OnInit {
 
-	Host_API = environment.Host_API;
-	Base_API = environment.Base_API;
 	users=[];
 	Search;
 	MoviewDetails=[];
@@ -29,7 +27,6 @@ export class MoviesComponent implements OnInit {
 
   	ngOnInit() {
   
-
   		
   	}
 

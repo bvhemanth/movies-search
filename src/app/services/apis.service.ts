@@ -10,22 +10,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApisService {
 	
+
 	Host_API = environment.Host_API;
 	Base_API = environment.Base_API;
+  	Key = environment.Key;
   	
   	constructor(private HttpClient: HttpClient) { }
 
 
   	get(value)
   	{
-  		
-  		
-  		return this.HttpClient.get<any>(this.Host_API+this.Base_API+"search/movie?api_key=a23a5f801234f82e77ce80db8e3ca2ca&language=en-US&query="+value+"&include_adult=false");
-  		
-	   
+  		return this.HttpClient.get<any>(this.Host_API+this.Base_API+"search/movie?api_key="+this.Key+"&language=en-US&query="+value+"&include_adult=false");
   	}
   	getMovieByid(id)
   	{
-		return this.HttpClient.get<any>(this.Host_API+this.Base_API+"movie/"+id+"?api_key=a23a5f801234f82e77ce80db8e3ca2ca&language=en-US");
+		return this.HttpClient.get<any>(this.Host_API+this.Base_API+"movie/"+id+"?api_key="+this.Key+"&language=en-US");
   	}
 }
